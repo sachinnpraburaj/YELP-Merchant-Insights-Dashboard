@@ -37,3 +37,6 @@ https://www.yelp.com/dataset/documentation/main
 
 ### time_series_forecasting: [time_series_forecasting.ipynb](time_series_forecasting.ipynb), [*time_series_forecasting_RNN.ipynb*]
 -
+
+
+![Training and tesing errors of forecasting models](/images/time_series_forecasting.png)
