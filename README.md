@@ -9,7 +9,8 @@ https://www.kaggle.com/yelp-dataset/yelp-dataset
 
 - To explore the data science techniques involved in the making of the project, take a look at the following notebooks
     - [Time series forecasting using ARIMA, Seasonal ARIMA, SARIMA with exogenous variables and Prophet] (time_series_forecasting.ipynb)
-    - Time series forecasting with Tensorflow using Recurrent Neural Network - *In Progress*
+    - [Time series forecasting with Tensorflow using Deep Neural Network] (time_series_forecasting_DNN.ipynb)
+    - [Time series forecasting with Tensorflow using Recurrent Neural Network] (time_series_forecasting_RNN.ipynb) - *In Progress*
 
 
 ## Project achievements
@@ -35,8 +36,9 @@ https://www.yelp.com/dataset/documentation/main
 - Number of records in the filtered dataset can be found in the notebook
 - Datasets are stored in a distributed format as parquet outputs
 
-### time_series_forecasting: [time_series_forecasting.ipynb](time_series_forecasting.ipynb), [*time_series_forecasting_RNN.ipynb*]
+### time_series_forecasting: [time_series_forecasting.ipynb](time_series_forecasting.ipynb), [time_series_forecasting_DNN.ipynb](time_series_forecasting_DNN.ipynb), [time_series_forecasting_RNN.ipynb](time_series_forecasting_RNN.ipynb)
 -
 
+![](/images/time_series_forecasting.png)
 
-![Training and tesing errors of forecasting models](/images/time_series_forecasting.png)
+![](/images/time_series_forecasting_DNN.png)
