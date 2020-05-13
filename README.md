@@ -8,9 +8,9 @@
 https://www.kaggle.com/yelp-dataset/yelp-dataset
 
 - To explore the data science techniques involved in the making of the project, take a look at the following notebooks
-    - [Time series forecasting using ARIMA, Seasonal ARIMA, SARIMA with exogenous variables and Prophet] (time_series_forecasting.ipynb)
-    - [Time series forecasting with Tensorflow using Deep Neural Network] (time_series_forecasting_DNN.ipynb)
-    - [Time series forecasting with Tensorflow using Recurrent Neural Network] (time_series_forecasting_RNN.ipynb) - *In Progress*
+    - [Time series forecasting using ARIMA, Seasonal ARIMA, SARIMA with exogenous variables and Prophet](time_series_forecasting.ipynb)
+    - [Time series forecasting with Tensorflow using Deep Neural Network](time_series_forecasting_DNN.ipynb)
+    - [Time series forecasting with Tensorflow using Recurrent Neural Network](time_series_forecasting_RNN.ipynb) - *In Progress*
 
 
 ## Project achievements
