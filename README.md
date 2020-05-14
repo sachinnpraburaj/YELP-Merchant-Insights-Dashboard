@@ -1,20 +1,18 @@
 # YELP Merchant dashboard
-
 - Developing a dashboard for YELP merchants using insights generated from big data analytics, machine learning and deep learning techniques
 
-- The unique value of the product is to perform time series forecasting and anomaly detection on daily checkins of YELP businesses and to provide additional insights for anomalies using NLP techniques on user reviews 
+- The unique value of the product is to perform *time series forecasting* and *anomaly detection* on daily checkins of YELP businesses and to provide additional insights for anomalies using *natural language processing* techniques on user reviews 
 
 - The YELP dataset was used for the goals of this project. Link to dataset:
 https://www.kaggle.com/yelp-dataset/yelp-dataset
 
 - To explore the data science techniques involved in the making of the project, take a look at the following notebooks
-    - [Time series forecasting using ARIMA, Seasonal ARIMA, SARIMA with exogenous variables and Prophet](time_series_forecasting.ipynb)
-    - [Time series forecasting with Tensorflow using Deep Neural Network](time_series_forecasting_DNN.ipynb)
-    - [Time series forecasting with Tensorflow using Recurrent Neural Network](time_series_forecasting_RNN.ipynb) - *In Progress*
+    - [Time series forecasting using ARIMA, Seasonal ARIMA, SARIMA with exogenous variables and Prophet](time_series_forecasting.ipynb) ([view forecasts](images/forecasts_set1.png))
+    - [Time series forecasting with Tensorflow using Linear and Dense neural networks](time_series_forecasting_DNN.ipynb) ([view forecasts](images/forecasts_set2.png))
+    - [Time series forecasting with Tensorflow using Recurrent neural networks](time_series_forecasting_RNN.ipynb) - *In Progress*
 
 
 ## Project achievements
-
 -  Explored multiple forecasting techniques - ARIMA, SARIMA, SARIMAX, Prophet and Recurrent Neural Network, and tested them to find best performing forecasting technique
 
 ## Instructions
@@ -28,6 +26,7 @@ kaggle datasets download -d yelp-dataset/yelp-dataset -p /data
 - Extract the files into '[data](data)' folder
 - For documentation of the data, visit:
 https://www.yelp.com/dataset/documentation/main
+
 ## Project steps with logic
 
 ### dataset filter: [filter_dataset.ipynb](filter_dataset.ipynb)
@@ -37,7 +36,6 @@ https://www.yelp.com/dataset/documentation/main
 - Datasets are stored in a distributed format as parquet outputs
 
 ### time_series_forecasting: [time_series_forecasting.ipynb](time_series_forecasting.ipynb), [time_series_forecasting_DNN.ipynb](time_series_forecasting_DNN.ipynb), [time_series_forecasting_RNN.ipynb](time_series_forecasting_RNN.ipynb)
--
 
 ![](/images/time_series_forecasting.png)
 
