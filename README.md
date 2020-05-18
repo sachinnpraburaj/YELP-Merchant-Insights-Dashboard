@@ -1,42 +1,53 @@
 # YELP Merchant dashboard
+
 - Developing a dashboard for YELP merchants using insights generated from big data analytics, machine learning and deep learning techniques
 
-- The unique value of the product is to perform *time series forecasting* and *anomaly detection* on daily checkins of YELP businesses and to provide additional insights for anomalies using *natural language processing* techniques on user reviews 
+- The unique value of the product is to perform *time series forecasting* and *anomaly detection* on daily checkins of YELP businesses and to provide additional insights for anomalies using *natural language processing* techniques on user reviews
 
 - The YELP dataset was used for the goals of this project. Link to dataset:
-https://www.kaggle.com/yelp-dataset/yelp-dataset
+<https://www.kaggle.com/yelp-dataset/yelp-dataset>
 
-- To explore the data science techniques involved in the making of the project, take a look at the following notebooks
-    - [Time series forecasting using ARIMA, Seasonal ARIMA, SARIMA with exogenous variables and Prophet](time_series_forecasting.ipynb) ([view forecasts](images/forecasts_set1.png))
-    - [Time series forecasting with Tensorflow using Linear and Dense neural networks](time_series_forecasting_DNN.ipynb) ([view forecasts](images/forecasts_set2.png))
-    - [Time series forecasting with Tensorflow using Recurrent neural networks](time_series_forecasting_RNN.ipynb) - *In Progress*
-
+- To explore the data science techniques involved in the making of the project, take a look at the following notebooks:
+  - [Time series forecasting using ARIMA, Seasonal ARIMA, SARIMA with exogenous variables and Prophet](forecasting/time_series_forecasting.ipynb) ([view forecasts](images/forecasts_set1.png))
+  - [Time series forecasting with Tensorflow using Linear, Dense and Convolutional neural networks](forecasting/time_series_forecasting_DNN.ipynb) ([view forecasts](images/forecasts_set2.png))
+  - [Time series forecasting with Tensorflow using Recurrent neural networks](forecasting/time_series_forecasting_RNN.ipynb) ([view forecasts](images/forecasts_set3.png))
 
 ## Project achievements
--  Explored multiple forecasting techniques - ARIMA, SARIMA, SARIMAX, Prophet and Recurrent Neural Network, and tested them to find best performing forecasting technique
+
+- Explored multiple forecasting techniques and tested them to find best performing forecasting technique - `Prophet` works amazingly with the time series data due to its light weight nature and automatic inference of seasonalities and trends in data - more information at '[forecasting](forecasting)' folder
 
 ## Instructions
 
-### downloading 
+> ### downloading
+
 - Setup kaggle on local system and download the dataset using
 
-```
+```bash
 kaggle datasets download -d yelp-dataset/yelp-dataset -p /data
 ```
+
 - Extract the files into '[data](data)' folder
 - For documentation of the data, visit:
-https://www.yelp.com/dataset/documentation/main
+<https://www.yelp.com/dataset/documentation/main>
 
 ## Project steps with logic
 
-### dataset filter: [filter_dataset.ipynb](filter_dataset.ipynb)
+> ### dataset filter: [filter_dataset.ipynb](filter_dataset.ipynb)
+
 - Filtered the datasets using PySpark to contain only businesses from Top 10 Canadian cities with most number business checkins
 - Dataset does not have a 'Country Code' to identify Canadian cities, so explored postal codes and identified codes of lengths 3,6,7 to be Canadian and filtered them
 - Number of records in the filtered dataset can be found in the notebook
 - Datasets are stored in a distributed format as parquet outputs
 
-### time_series_forecasting: [time_series_forecasting.ipynb](time_series_forecasting.ipynb), [time_series_forecasting_DNN.ipynb](time_series_forecasting_DNN.ipynb), [time_series_forecasting_RNN.ipynb](time_series_forecasting_RNN.ipynb)
+> ### time_series_forecasting: [forecasting](forecasting)
 
-![](/images/time_series_forecasting.png)
+- Used daily aggregated time series data of number of checkins in all businesses within Toronto
+- Explored different time series forecasting techniques using train, validation and test sets appropriately
+- Evaluated model performances using MAPE (*Mean Average Precision Error*)
 
-![](/images/time_series_forecasting_DNN.png)
+<img src="./images/metrics_mape.png" alt="MAPE formula" width="350"/>
+
+- Inferences:
+  - Prophet works best with the data as it is light weight, needs very little tuning and captures the essence of the time series like trend and seasonality with high accuracy
+  - Linear, Dense and Convolutional Neural Network models work well and the performance can be improved by tuning the hyperparameters, but they are heavy compared to Prophet as they need significant training and will not scale easily for multiple time series
+  - RNN and LSTM models show poor performance as the number of training samples is significantly less - we can see its performance improvement on hourly aggregate version of data but that is out of the problem's scope
